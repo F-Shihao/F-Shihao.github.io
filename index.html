@@ -55,20 +55,17 @@
         }
         #language-button {
             position: absolute;
-            top: 10px;
-            right: 20px;
-            padding: 0.5rem 1rem;
-            font-size: 1rem;
-            color: white;
-            background-color: #0072ff;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            background: none;
             border: none;
-            border-radius: 20px;
             cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: white;
+            transition: transform 0.3s;
         }
         #language-button:hover {
-            background-color: #0056b3;
+            transform: scale(1.2);
         }
         section {
             max-width: 900px;
@@ -111,9 +108,9 @@
                 font-size: 1rem;
             }
             #language-button {
-                top: 15px;
-                right: 15px;
-                font-size: 0.9rem;
+                top: 10px;
+                right: 10px;
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -122,7 +119,7 @@
     <header>
         <h1 id="header-title">Personal Resume</h1>
         <p id="header-subtitle">Graduate Student | Aspiring International Advocate</p>
-        <button onclick="toggleLanguage()" id="language-button">中文/English</button>
+        <button onclick="toggleLanguage()" id="language-button">🌐</button>
     </header>
     <nav>
         <div class="links">
