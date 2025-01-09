@@ -6,31 +6,33 @@
     <title>Academic CV</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #f4faff;
+            color: #2c3e50;
         }
         header {
-            background: #2c3e50;
+            background: #6c63ff;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
         }
         nav {
             text-align: center;
-            background: #ecf0f1;
+            background: #dfe6fd;
             padding: 0.5rem 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav a {
             margin: 0 15px;
             text-decoration: none;
-            color: #2c3e50;
+            color: #6c63ff;
+            font-weight: bold;
         }
         nav a:hover {
-            color: #3498db;
+            color: #2c3e50;
         }
         section {
             padding: 2rem;
@@ -38,34 +40,50 @@
             margin: auto;
         }
         .card {
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
             margin-bottom: 1rem;
             padding: 1rem;
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #ffffff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         footer {
             text-align: center;
-            background: #2c3e50;
+            background: #6c63ff;
             color: #fff;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             bottom: 0;
+            display: none;
+        }
+        .footer-toggle {
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .footer-toggle button {
+            background: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .footer-toggle button:hover {
+            background: #5755d9;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>FU,SHIHAO</h1>
-        <p>Ph.D. Student in Municipal Engineering</p>
+        <h1>Academic CV</h1>
+        <p>Graduate Student in Environmental Science and Engineering | Aspiring International Policy Advocate</p>
     </header>
     <nav>
         <a href="#about">About Me</a>
         <a href="#education">Education</a>
         <a href="#experience">Research & Projects</a>
-        <a href="#awards">Skills</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
     </nav>
     <section id="about">
@@ -93,11 +111,11 @@
             </ul>
         </div>
     </section>
-    <section id="awards">
+    <section id="skills">
         <div class="card">
-            <h2>Awards</h2>
+            <h2>Skills</h2>
             <ul>
-                <li>National Scholarship, Ministry of Education, P. R. China,2022</li>
+                <li>Programming Languages: Python, R, HTML/CSS</li>
                 <li>Data Analysis and Modeling: MATLAB, Origin</li>
                 <li>Languages: English (Proficient), German (Basic)</li>
             </ul>
@@ -106,12 +124,22 @@
     <section id="contact">
         <div class="card">
             <h2>Contact</h2>
-            <p>Email: hitfsh@outlook.com</p>
-            <p>Adress: No. 73, Huanghe Road, Nangang District, Harbin 150090, P. R. China</p>
+            <p>Email: your_email@example.com</p>
+            <p>Phone: +123-456-7890</p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">View Profile</a></p>
         </div>
     </section>
-    <footer>
-        <p>&copy; 2025 FU,SHIHAO Technical Support：ChatGPT</p>
+    <div class="footer-toggle">
+        <button onclick="toggleFooter()">Toggle Footer</button>
+    </div>
+    <footer id="site-footer">
+        <p>&copy; 2025 Academic CV</p>
     </footer>
+    <script>
+        function toggleFooter() {
+            const footer = document.getElementById('site-footer');
+            footer.style.display = footer.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
 </body>
 </html>
