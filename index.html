@@ -125,7 +125,7 @@
         <div class="links">
             <a href="#about" id="nav-about">About Me</a>
             <a href="#education" id="nav-education">Education</a>
-            <a href="#experience" id="nav-experience">Experience</a>
+            <a href="#Publications" id="nav-Publications">Publications</a>
             <a href="#Awards" id="nav-Awards">Awards</a>
             <a href="#contact" id="nav-contact">Contact</a>
         </div>
@@ -140,9 +140,9 @@
             <li>Doctoral Candidate: Municipal Engineering | XYZ University</li>
         </ul>
     </section>
-    <section id="experience">
-        <h2 id="experience-title">Experience</h2>
-        <ul id="experience-list">
+    <section id="Publications">
+        <h2 id="Publications-title">Publications</h2>
+        <ul id="Publications-list">
             <li>Research on ammonia reduction technologies</li>
         </ul>
     </section>
@@ -166,15 +166,15 @@
             en: {
                 title: "FU,SHIHAO",
                 subtitle: "Ph.D. Student | Harbin Institute of Technology",
-                nav: ["About Me", "Education", "Experience", "Awards", "Contact"],
+                nav: ["About Me", "Education", "Publications", "Awards", "Contact"],
                 aboutTitle: "About Me",
                 aboutContent: "Welcome! ",
                 educationTitle: "Education",
                 educationList: ["Doctoral Candidate: Municipal Engineering | XYZ University"],
-                experienceTitle: "Experience",
-                experienceList: ["Research on ammonia reduction technologies"],
+                PublicationsTitle: "Publications",
+                PublicationsList: ["Working..."],
                 AwardsTitle: "Awards",
-                AwardsList: ["Programming: Python, R, HTML/CSS"],
+                AwardsList: ["National Scholorship, Ministry of Education (China), 2022","Outstanding Graduate, Chongqing Education Commission, 2024","Outstanding undergraduate graduation thesis,Chongqing Education Commission, 2024"],
                 contactTitle: "Contact",
                 contactContent: "Email: hitfsh@outlook.com",
                 footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT."
@@ -186,14 +186,14 @@
                 aboutTitle: "基本信息",
                 aboutContent: "欢迎！我是一名专注于市政工程领域的研究生，研究方向包括水处理技术。",
                 educationTitle: "教育背景",
-                educationList: ["博士研究生: 市政工程 | 哈尔滨工业大学"],
-                experienceTitle: "论文期刊",
-                experienceList: ["氨气减排技术研究"],
+                educationList: ["待更新..."],
+                PublicationsTitle: "论文期刊",
+                PublicationsList: ["待更新..."],
                 AwardsTitle: "获奖情况",
-                AwardsList: ["编程: Python, R, HTML/CSS"],
+                AwardsList: ["待更新..."],
                 contactTitle: "联系方式",
                 contactContent: "邮箱: hitfsh@outlook.com",
-                footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT"
+                footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT."
             }
         };
 
@@ -210,8 +210,8 @@
             document.querySelector('#about-content').textContent = langContent.aboutContent;
             document.querySelector('#education-title').textContent = langContent.educationTitle;
             document.querySelector('#education-list').innerHTML = langContent.educationList.map(item => `<li>${item}</li>`).join('');
-            document.querySelector('#experience-title').textContent = langContent.experienceTitle;
-            document.querySelector('#experience-list').innerHTML = langContent.experienceList.map(item => `<li>${item}</li>`).join('');
+            document.querySelector('#Publications-title').textContent = langContent.PublicationsTitle;
+            document.querySelector('#Publications-list').innerHTML = langContent.PublicationsList.map(item => `<li>${item}</li>`).join('');
             document.querySelector('#Awards-title').textContent = langContent.AwardsTitle;
             document.querySelector('#Awards-list').innerHTML = langContent.AwardsList.map(item => `<li>${item}</li>`).join('');
             document.querySelector('#contact-title').textContent = langContent.contactTitle;
