@@ -117,8 +117,8 @@
 </head>
 <body>
     <header>
-        <h1 id="header-title">Personal Resume</h1>
-        <p id="header-subtitle">Graduate Student | Aspiring International Advocate</p>
+        <h1 id="header-title">FU,SHIHAO</h1>
+        <p id="header-subtitle">Ph.D. Student | Harbin Institute of Technology</p>
         <button onclick="toggleLanguage()" id="language-button">🌐</button>
     </header>
     <nav>
@@ -126,13 +126,13 @@
             <a href="#about" id="nav-about">About Me</a>
             <a href="#education" id="nav-education">Education</a>
             <a href="#experience" id="nav-experience">Experience</a>
-            <a href="#skills" id="nav-skills">Skills</a>
+            <a href="#Awards" id="nav-Awards">Awards</a>
             <a href="#contact" id="nav-contact">Contact</a>
         </div>
     </nav>
     <section id="about">
         <h2 id="about-title">About Me</h2>
-        <p id="about-content">Welcome! I am a graduate student specializing in Environmental Science and Engineering. My focus is on water treatment technologies and international environmental policy.</p>
+        <p id="about-content">Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering. My focus is on water treatment technologies and international environmental policy.</p>
     </section>
     <section id="education">
         <h2 id="education-title">Education</h2>
@@ -146,38 +146,38 @@
             <li>Research on ammonia reduction technologies</li>
         </ul>
     </section>
-    <section id="skills">
-        <h2 id="skills-title">Skills</h2>
-        <ul id="skills-list">
+    <section id="Awards">
+        <h2 id="Awards-title">Awards</h2>
+        <ul id="Awards-list">
             <li>Programming: Python, R, HTML/CSS</li>
         </ul>
     </section>
     <section id="contact">
         <h2 id="contact-title">Contact</h2>
-        <p id="contact-content">Email: your_email@example.com</p>
+        <p id="contact-content">Email: hitfsh@outlook.com</p>
     </section>
     <footer>
-        <p id="footer-content">&copy; 2025 Personal Resume</p>
+        <p id="footer-content">&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT.</p>
     </footer>
     <script>
         let currentLang = 'en';
 
         const content = {
             en: {
-                title: "Personal Resume",
-                subtitle: "Graduate Student | Aspiring International Advocate",
-                nav: ["About Me", "Education", "Experience", "Skills", "Contact"],
+                title: "FU,SHIHAO",
+                subtitle: "Ph.D. Student | Harbin Institute of Technology",
+                nav: ["About Me", "Education", "Experience", "Awards", "Contact"],
                 aboutTitle: "About Me",
-                aboutContent: "Welcome! I am a graduate student specializing in Environmental Science and Engineering. My focus is on water treatment technologies and international environmental policy.",
+                aboutContent: "Welcome! ",
                 educationTitle: "Education",
                 educationList: ["Doctoral Candidate: Municipal Engineering | XYZ University"],
                 experienceTitle: "Experience",
                 experienceList: ["Research on ammonia reduction technologies"],
-                skillsTitle: "Skills",
-                skillsList: ["Programming: Python, R, HTML/CSS"],
+                AwardsTitle: "Awards",
+                AwardsList: ["Programming: Python, R, HTML/CSS"],
                 contactTitle: "Contact",
-                contactContent: "Email: your_email@example.com",
-                footer: "&copy; 2025 Personal Resume"
+                contactContent: "Email: hitfsh@outlook.com",
+                footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT."
             },
             zh: {
                 title: "个人简历",
@@ -189,11 +189,11 @@
                 educationList: ["博士研究生: 市政工程 | 哈尔滨工业大学"],
                 experienceTitle: "经历",
                 experienceList: ["氨气减排技术研究"],
-                skillsTitle: "技能",
-                skillsList: ["编程: Python, R, HTML/CSS"],
+                AwardsTitle: "技能",
+                AwardsList: ["编程: Python, R, HTML/CSS"],
                 contactTitle: "联系方式",
-                contactContent: "邮箱: your_email@example.com",
-                footer: "&copy; 2025 个人简历"
+                contactContent: "邮箱: hitfsh@outlook.com",
+                footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT"
             }
         };
 
@@ -212,8 +212,8 @@
             document.querySelector('#education-list').innerHTML = langContent.educationList.map(item => `<li>${item}</li>`).join('');
             document.querySelector('#experience-title').textContent = langContent.experienceTitle;
             document.querySelector('#experience-list').innerHTML = langContent.experienceList.map(item => `<li>${item}</li>`).join('');
-            document.querySelector('#skills-title').textContent = langContent.skillsTitle;
-            document.querySelector('#skills-list').innerHTML = langContent.skillsList.map(item => `<li>${item}</li>`).join('');
+            document.querySelector('#Awards-title').textContent = langContent.AwardsTitle;
+            document.querySelector('#Awards-list').innerHTML = langContent.AwardsList.map(item => `<li>${item}</li>`).join('');
             document.querySelector('#contact-title').textContent = langContent.contactTitle;
             document.querySelector('#contact-content').textContent = langContent.contactContent;
             document.querySelector('#footer-content').innerHTML = langContent.footer;
