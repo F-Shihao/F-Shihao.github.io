@@ -16,27 +16,27 @@
         header {
             background: linear-gradient(135deg, #6c63ff, #96fbc4);
             color: #fff;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin: 0;
         }
         header p {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: 0.5rem 0 0;
         }
         nav {
             display: flex;
             justify-content: center;
             background: #ffffff;
-            padding: 0.75rem 0;
+            padding: 0.5rem 0;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            margin: 0 1rem;
+            margin: 0 0.5rem;
             text-decoration: none;
             color: #6c63ff;
             font-weight: bold;
@@ -46,15 +46,15 @@
             color: #333;
         }
         section {
-            padding: 2rem;
+            padding: 1.5rem;
             max-width: 800px;
             margin: auto;
         }
         .card {
             border: none;
             border-radius: 12px;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
             background: #ffffff;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
@@ -67,7 +67,7 @@
             background: linear-gradient(135deg, #6c63ff, #96fbc4);
             color: #fff;
             text-align: center;
-            padding: 1rem 0;
+            padding: 0.5rem 0;
             position: fixed;
             bottom: -100%;
             width: 100%;
@@ -78,22 +78,6 @@
         }
         .footer-content {
             font-size: 1rem;
-        }
-        .footer-toggle {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .footer-toggle button {
-            background: #6c63ff;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .footer-toggle button:hover {
-            background: #5755d9;
         }
     </style>
 </head>
@@ -108,6 +92,7 @@
         <a href="#experience">Research & Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <button onclick="toggleLanguage()">中文/English</button>
     </nav>
     <section id="about">
         <div class="card">
@@ -152,24 +137,23 @@
             <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">View Profile</a></p>
         </div>
     </section>
-    <div class="footer-toggle">
-        <button onclick="toggleFooter()">Toggle Footer</button>
-    </div>
     <footer id="site-footer">
         <div class="footer-content">
             <p>&copy; 2025 Academic CV</p>
         </div>
     </footer>
     <script>
-        let footerVisible = false;
-        function toggleFooter() {
-            const footer = document.getElementById('site-footer');
-            footerVisible = !footerVisible;
-            if (footerVisible) {
-                footer.classList.add('visible');
-            } else {
-                footer.classList.remove('visible');
-            }
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const aboutText = {
+                en: "Welcome! I am a graduate student specializing in Environmental Science and Engineering, with a focus on water treatment technologies and international environmental policy. My career aspiration is to contribute to global environmental governance through international organizations.",
+                zh: "欢迎！我是一名专注于环境科学与工程的研究生，研究方向包括水处理技术和国际环境政策。我的职业目标是通过国际组织为全球环境治理作出贡献。"
+            };
+            
+            const aboutElement = document.querySelector("#about p");
+            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            aboutElement.textContent = aboutText[currentLang];
         }
     </script>
 </body>
