@@ -63,7 +63,7 @@
         }
         section {
             max-width: 900px;
-            margin: 2rem auto;
+            margin: 1rem auto;
             padding: 1rem;
             background: white;
             border-radius: 12px;
@@ -108,30 +108,23 @@
         <h2 id="education-title">Education</h2>
         <ul id="education-list">
             <li>Doctoral Candidate: Municipal Engineering | XYZ University</li>
-            <li>Bachelor of Science: Environmental Science | ABC University</li>
         </ul>
     </section>
     <section id="experience">
         <h2 id="experience-title">Experience</h2>
         <ul id="experience-list">
             <li>Research on ammonia reduction technologies</li>
-            <li>Electrocatalytic membrane studies</li>
-            <li>Numerical integration using Romberg method</li>
         </ul>
     </section>
     <section id="skills">
         <h2 id="skills-title">Skills</h2>
         <ul id="skills-list">
             <li>Programming: Python, R, HTML/CSS</li>
-            <li>Data Analysis: MATLAB, Origin</li>
-            <li>Languages: English (Proficient), German (Basic)</li>
         </ul>
     </section>
     <section id="contact">
         <h2 id="contact-title">Contact</h2>
         <p id="contact-content">Email: your_email@example.com</p>
-        <p>Phone: +123-456-7890</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">View Profile</a></p>
     </section>
     <footer>
         <p id="footer-content">&copy; 2025 Personal Resume</p>
@@ -147,22 +140,11 @@
                 aboutTitle: "About Me",
                 aboutContent: "Welcome! I am a graduate student specializing in Environmental Science and Engineering. My focus is on water treatment technologies and international environmental policy.",
                 educationTitle: "Education",
-                educationList: [
-                    "Doctoral Candidate: Municipal Engineering | XYZ University",
-                    "Bachelor of Science: Environmental Science | ABC University"
-                ],
+                educationList: ["Doctoral Candidate: Municipal Engineering | XYZ University"],
                 experienceTitle: "Experience",
-                experienceList: [
-                    "Research on ammonia reduction technologies",
-                    "Electrocatalytic membrane studies",
-                    "Numerical integration using Romberg method"
-                ],
+                experienceList: ["Research on ammonia reduction technologies"],
                 skillsTitle: "Skills",
-                skillsList: [
-                    "Programming: Python, R, HTML/CSS",
-                    "Data Analysis: MATLAB, Origin",
-                    "Languages: English (Proficient), German (Basic)"
-                ],
+                skillsList: ["Programming: Python, R, HTML/CSS"],
                 contactTitle: "Contact",
                 contactContent: "Email: your_email@example.com",
                 footer: "&copy; 2025 Personal Resume"
@@ -174,22 +156,11 @@
                 aboutTitle: "关于我",
                 aboutContent: "欢迎！我是一名专注于环境科学与工程的研究生，研究方向包括水处理技术和国际环境政策。",
                 educationTitle: "教育背景",
-                educationList: [
-                    "博士研究生: 市政工程 | XYZ大学",
-                    "理学学士: 环境科学 | ABC大学"
-                ],
+                educationList: ["博士研究生: 市政工程 | XYZ大学"],
                 experienceTitle: "经历",
-                experienceList: [
-                    "氨气减排技术研究",
-                    "电催化膜研究",
-                    "龙贝格积分法数值计算"
-                ],
+                experienceList: ["氨气减排技术研究"],
                 skillsTitle: "技能",
-                skillsList: [
-                    "编程: Python, R, HTML/CSS",
-                    "数据分析: MATLAB, Origin",
-                    "语言: 英语(熟练), 德语(基础)"
-                ],
+                skillsList: ["编程: Python, R, HTML/CSS"],
                 contactTitle: "联系方式",
                 contactContent: "邮箱: your_email@example.com",
                 footer: "&copy; 2025 个人简历"
@@ -206,4 +177,17 @@
                 link.textContent = langContent.nav[index];
             });
             document.querySelector('#about-title').textContent = langContent.aboutTitle;
-            document.querySelector('#about
+            document.querySelector('#about-content').textContent = langContent.aboutContent;
+            document.querySelector('#education-title').textContent = langContent.educationTitle;
+            document.querySelector('#education-list').innerHTML = langContent.educationList.map(item => `<li>${item}</li>`).join('');
+            document.querySelector('#experience-title').textContent = langContent.experienceTitle;
+            document.querySelector('#experience-list').innerHTML = langContent.experienceList.map(item => `<li>${item}</li>`).join('');
+            document.querySelector('#skills-title').textContent = langContent.skillsTitle;
+            document.querySelector('#skills-list').innerHTML = langContent.skillsList.map(item => `<li>${item}</li>`).join('');
+            document.querySelector('#contact-title').textContent = langContent.contactTitle;
+            document.querySelector('#contact-content').textContent = langContent.contactContent;
+            document.querySelector('#footer-content').innerHTML = langContent.footer;
+        }
+    </script>
+</body>
+</html>
