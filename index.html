@@ -18,6 +18,7 @@
             text-align: center;
             padding: 1.5rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         header h1 {
             font-size: 2.5rem;
@@ -52,17 +53,21 @@
         nav a:hover {
             color: #0056b3;
         }
-        nav button {
+        #language-button {
+            position: absolute;
+            top: 10px;
+            right: 20px;
             padding: 0.5rem 1rem;
             font-size: 1rem;
             color: white;
             background-color: #0072ff;
             border: none;
-            border-radius: 5px;
+            border-radius: 20px;
             cursor: pointer;
             transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        nav button:hover {
+        #language-button:hover {
             background-color: #0056b3;
         }
         section {
@@ -105,6 +110,11 @@
             header p {
                 font-size: 1rem;
             }
+            #language-button {
+                top: 15px;
+                right: 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -112,6 +122,7 @@
     <header>
         <h1 id="header-title">Personal Resume</h1>
         <p id="header-subtitle">Graduate Student | Aspiring International Advocate</p>
+        <button onclick="toggleLanguage()" id="language-button">中文/English</button>
     </header>
     <nav>
         <div class="links">
@@ -121,7 +132,6 @@
             <a href="#skills" id="nav-skills">Skills</a>
             <a href="#contact" id="nav-contact">Contact</a>
         </div>
-        <button onclick="toggleLanguage()" id="language-button">中文/English</button>
     </nav>
     <section id="about">
         <h2 id="about-title">About Me</h2>
