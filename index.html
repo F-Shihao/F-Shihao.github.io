@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -103,18 +103,24 @@
     </section>
     <section id="education">
         <h2 id="education-title">Education</h2>
-        <div class="content-block">Doctoral Candidate: Municipal Engineering | Harbin Institute of Technology</div>
-        <div class="content-block">Bachelor: Water Science and Engineering | Chongqing University</div>
+        <div id="education-content">
+            <div class="content-block">Doctoral Candidate: Municipal Engineering | Harbin Institute of Technology</div>
+            <div class="content-block">Bachelor: Water Science and Engineering | Chongqing University</div>
+        </div>
     </section>
     <section id="Publications">
         <h2 id="Publications-title">Publications</h2>
-        <div class="content-block">Working...</div>
+        <div id="Publications-content">
+            <div class="content-block">Working...</div>
+        </div>
     </section>
     <section id="Awards">
         <h2 id="Awards-title">Awards</h2>
-        <div class="content-block">National Scholarship, Ministry of Education (China), 2022</div>
-        <div class="content-block">Outstanding Graduate, Chongqing Education Commission, 2024</div>
-        <div class="content-block">Outstanding Design, Chongqing Education Commission, 2024</div>
+        <div id="Awards-content">
+            <div class="content-block">National Scholarship, Ministry of Education (China), 2022</div>
+            <div class="content-block">Outstanding Graduate, Chongqing Education Commission, 2024</div>
+            <div class="content-block">Outstanding Design, Chongqing Education Commission, 2024</div>
+        </div>
     </section>
     <section id="contact">
         <h2 id="contact-title">Contact</h2>
@@ -127,43 +133,65 @@
         const content = {
             en: {
                 title: "FU,SHIHAO",
-                subtitle: "Ph.D. Student | Harbin Institute of Technology",
+                subtitle: "Ph.D. Student | Harbin Institute of Technology", 
                 nav: ["About", "Edu.", "Pub.", "Awards", "Contact"],
                 aboutContent: "Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering.",
-                education: ["Doctoral Candidate: Municipal Engineering | Harbin Institute of Technology", "Bachelor: Water Science and Engineering | Chongqing University"],
+                education: [
+                    "Doctoral Candidate: Municipal Engineering | Harbin Institute of Technology",
+                    "Bachelor: Water Science and Engineering | Chongqing University",
+                ],
                 publications: ["Working..."],
-                awards: ["National Scholarship, Ministry of Education (China), 2022", "Outstanding Graduate, Chongqing Education Commission, 2024", "Outstanding Design, Chongqing Education Commission, 2024"],
-                footer: "&copy; 2025 Fu, Shihao. Technical Support by ChatGPT."
+                awards: [
+                    "National Scholarship, Ministry of Education (China), 2022",
+                    "Outstanding Graduate, Chongqing Education Commission, 2024",
+                    "Outstanding Design, Chongqing Education Commission, 2024",
+                ],
+                footer: "&copy; 2025 Fu, Shihao. Technical Support by ChatGPT.",
             },
             zh: {
                 title: "FU,SHIHAO",
                 subtitle: "博士研究生 | 哈尔滨工业大学",
                 nav: ["基本信息", "教育背景", "论文期刊", "获奖情况", "联系方式"],
                 aboutContent: "欢迎！我是一名专注于市政工程领域的研究生，研究方向包括水处理技术。",
-                education: ["2024年－至今，哈尔滨工业大学市政工程系，博士研究生在读", "2020年－2024年，重庆大学 给排水科学与工程系，获工学学士学位"],
+                education: [
+                    "2024年－至今，哈尔滨工业大学市政工程系，博士研究生在读",
+                    "2020年－2024年，重庆大学给排水科学与工程系，获工学学士学位",
+                ],
                 publications: ["待更新..."],
-                awards: ["国家奖学金，教育部，2022年", "重庆市优秀毕业生，市教委，2024年", "重庆市优秀毕业设计, 市教委，2024年"],
-                footer: "&copy; 2025 Fu, Shihao. 技术支持由 ChatGPT 提供。"
-            }
+                awards: [
+                    "国家奖学金，教育部，2022年",
+                    "重庆市优秀毕业生，市教委，2024年",
+                    "重庆市优秀毕业设计, 市教委，2024年",
+                ],
+                footer: "&copy; 2025 Fu, Shihao. 技术支持由ChatGPT 提供。",
+            },
         };
 
-        let currentLang = 'en';
+        let currentLang = "en";
 
         function toggleLanguage() {
-            currentLang = currentLang === 'en' ? 'zh' : 'en';
+            currentLang = currentLang === "en" ? "zh" : "en";
             const lang = content[currentLang];
 
-            document.getElementById('header-title').textContent = lang.title;
-            document.getElementById('header-subtitle').textContent = lang.subtitle;
-            document.querySelectorAll('nav a').forEach((el, i) => el.textContent = lang.nav[i]);
-            document.getElementById('about-content').textContent = lang.aboutContent;
-            document.getElementById('education-content').innerHTML = lang.education.map(item => `<div class="content-block">${item}</div>`).join('');
-            document.getElementById('Publications-content').innerHTML = lang.publications.map(item => `<div class="content-block">${item}</div>`).join('');
-            document.getElementById('Awards-content').innerHTML = lang.awards.map(item => `<div class="content-block">${item}</div>`).join('');
-            document.getElementById('footer-content').innerHTML = lang.footer;
+            document.getElementById("header-title").textContent = lang.title;
+            document.getElementById("header-subtitle").textContent = lang.subtitle;
+            document.querySelectorAll("nav a").forEach((el, i) => (el.textContent = lang.nav[i]));
+            document.getElementById("about-content").textContent = lang.aboutContent;
+            document.getElementById("education-content").innerHTML = lang.education
+                .map((item) => `<div class="content-block">${item}</div>`)
+                .join("");
+            document.getElementById("Publications-content").innerHTML = lang.publications
+                .map((item) => `<div class="content-block">${item}</div>`)
+                .join("");
+            document.getElementById("Awards-content").innerHTML = lang.awards
+                .map((item) => `<div class="content-block">${item}</div>`)
+                .join("");
+            document.getElementById("footer-content").innerHTML = lang.footer;
         }
 
-        toggleLanguage(); // Initial content setup
+        // Initialize the default language content
+        toggleLanguage();
     </script>
 </body>
 </html>
+
