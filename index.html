@@ -7,111 +7,64 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            margin: 0; padding: 0;
+            background: #f8f9fa; color: #333;
         }
-        header {
+        header, footer {
             background: linear-gradient(135deg, #00c6ff, #0072ff);
-            color: white;
-            text-align: center;
+            color: white; text-align: center;
             padding: 1.5rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
-        header h1 {
-            font-size: 2.5rem;
-            margin: 0;
-        }
-        header p {
-            margin: 0.5rem 0 0;
-            font-size: 1.2rem;
-        }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 0.5rem 0 0; font-size: 1.2rem; }
         nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: white;
-            padding: 1.2rem 1.5rem;
+            display: flex; justify-content: center; align-items: center;
+            background: white; padding: 1rem;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+            position: sticky; top: 0; z-index: 1000;
         }
         nav a {
-            text-decoration: none;
-            color: #0072ff;
-            font-weight: bold;
-            transition: color 0.3s;
+            text-decoration: none; color: #0072ff; font-weight: bold;
+            margin: 0 0.5rem; transition: color 0.3s;
         }
-        nav a:hover {
-            color: #0056b3;
-        }
+        nav a:hover { color: #0056b3; }
         #language-button {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: white;
-            transition: transform 0.3s;
+            position: absolute; top: 15px; right: 15px;
+            font-size: 1.5rem; background: none; border: none; cursor: pointer;
+            color: white; transition: transform 0.3s;
         }
-        #language-button:hover {
-            transform: scale(1.2);
-        }
+        #language-button:hover { transform: scale(1.2); }
         section {
-            max-width: 900px;
-            margin: 1rem auto;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
+            max-width: 900px; margin: 1rem auto; padding: 1.5rem;
+            background: white; border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        section h2 {
-            margin-top: 0;
-            font-size: 1.5rem;
+        #education-list li, #Publications-list li, #Awards-list li {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            background: #f5f7fa;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 6px solid #0072ff;
+        }
+        #education-list li span, #Publications-list li span, #Awards-list li span {
+            font-weight: bold;
+            color: #0056b3;
         }
         footer {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
-            color: white;
-            text-align: center;
-            padding: 0.1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed; bottom: 0; width: 100%;
+            padding-bottom: 2rem;
+        }
+        #footer-content {
+            margin: 0;
         }
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            nav .links {
-                justify-content: center;
-            }
-            section {
-                margin: 0.5rem;
-                padding: 0.8rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            header p {
-                font-size: 1rem;
-            }
-            #language-button {
-                top: 10px;
-                right: 10px;
-                font-size: 1.3rem;
-            }
+            nav { flex-direction: column; }
+            header h1 { font-size: 2rem; }
+            header p { font-size: 1rem; }
+            #language-button { top: 10px; right: 10px; font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -122,105 +75,89 @@
         <button onclick="toggleLanguage()" id="language-button">🌐</button>
     </header>
     <nav>
-        <div class="links">
-            <a href="#about" id="nav-about">About</a>
-            <a href="#education" id="nav-education">Edu.</a>
-            <a href="#Publications" id="nav-Publications">Pub.</a>
-            <a href="#Awards" id="nav-Awards">Awards</a>
-            <a href="#contact" id="nav-contact">Contact</a>
-        </div>
+        <a href="#about" id="nav-about">About</a>
+        <a href="#education" id="nav-education">Edu.</a>
+        <a href="#Publications" id="nav-Publications">Pub.</a>
+        <a href="#Awards" id="nav-Awards">Awards</a>
+        <a href="#contact" id="nav-contact">Contact</a>
     </nav>
     <section id="about">
         <h2 id="about-title">About</h2>
-        <p id="about-content">Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering.</p>
+        <div style="background: #e7f3ff; padding: 1rem; border-radius: 8px;">
+            <p id="about-content">Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering.</p>
+        </div>
     </section>
     <section id="education">
         <h2 id="education-title">Education</h2>
         <ul id="education-list">
-            <li>Doctoral Candidate: Municipal Engineering         | Harbin Institute of Technology</li>
-            <li>Bachlor Degree: Water Sicience and Engineering    | Chongqing University</li>
+            <li><span>Doctoral Candidate:</span> Municipal Engineering | Harbin Institute of Technology</li>
+            <li><span>Bachelor:</span> Water Science and Engineering | Chongqing University</li>
         </ul>
     </section>
     <section id="Publications">
         <h2 id="Publications-title">Publications</h2>
         <ul id="Publications-list">
-            <li>WORKING...</li>
+            <li>Working...</li>
         </ul>
     </section>
     <section id="Awards">
         <h2 id="Awards-title">Awards</h2>
         <ul id="Awards-list">
-            <li>National Scholorship, Ministry of Education (China), 2022</li>
-            <li>Outstanding Undergraduate Graduate, Chongqing Education Commission, 2024</li>
-            <li>Outstanding Undergraduate Graduation Design,Chongqing Education Commission, 2024</li>
+            <li>National Scholarship, Ministry of Education (China), 2022</li>
+            <li>Outstanding Graduate, Chongqing Education Commission, 2024</li>
+            <li>Outstanding Design, Chongqing Education Commission, 2024</li>
         </ul>
     </section>
     <section id="contact">
         <h2 id="contact-title">Contact</h2>
-        <p id="contact-content">Email: hitfsh@outlook.com</p>
+        <div style="background: #e7f3ff; padding: 1rem; border-radius: 8px;">
+            <p id="contact-content">Email: hitfsh@outlook.com</p>
+        </div>
     </section>
     <footer>
-        <p id="footer-content">&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT.</p>
+        <p id="footer-content">&copy; 2025 Fu, Shihao. Technical Support by ChatGPT.</p>
     </footer>
     <script>
-        let currentLang = 'en';
-
         const content = {
             en: {
                 title: "FU,SHIHAO",
                 subtitle: "Ph.D. Student | Harbin Institute of Technology",
                 nav: ["About", "Edu.", "Pub.", "Awards", "Contact"],
-                aboutTitle: "About",
                 aboutContent: "Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering.",
-                educationTitle: "Education",
-                educationList: ["Doctoral Candidate: Municipal Engineering         | Harbin Institute of Technology", "Bachlor Degree: Water Sicience and Engineering    | Chongqing University"],
-                PublicationsTitle: "Publications",
-                PublicationsList: ["Working..."],
-                AwardsTitle: "Awards",
-                AwardsList: ["National Scholorship, Ministry of Education (China), 2022","Outstanding Undergraduate Graduate, Chongqing Education Commission, 2024","Outstanding Undergraduate Graduation Design, Chongqing Education Commission, 2024"],
-                contactTitle: "Contact",
-                contactContent: "Email: hitfsh@outlook.com",
-                footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT."
+                education: ["<span>Doctoral Candidate:</span> Municipal Engineering | Harbin Institute of Technology", "<span>Bachelor:</span> Water Science and Engineering | Chongqing University"],
+                publications: ["Working..."],
+                awards: ["National Scholarship, Ministry of Education (China), 2022", "Outstanding Graduate, Chongqing Education Commission, 2024", "Outstanding Design, Chongqing Education Commission, 2024"],
+                footer: "&copy; 2025 Fu, Shihao. Technical Support by ChatGPT."
             },
             zh: {
                 title: "个人简历",
                 subtitle: "博士研究生 | 哈尔滨工业大学",
-                nav: ["About", "Edu.", "Pub.", "Awards", "Contact"],
-                aboutTitle: "基本信息",
+                nav: ["基本信息", "教育背景", "论文期刊", "获奖情况", "联系方式"],
                 aboutContent: "欢迎！我是一名专注于市政工程领域的研究生，研究方向包括水处理技术。",
-                educationTitle: "教育背景",
-                educationList: ["2024年－至今，哈尔滨工业大学市政工程系，博士研究生在读","2020年－2024年，重庆大学 给排水科学与工程系，获工学学士学位" ],
-                PublicationsTitle: "论文期刊",
-                PublicationsList: ["待更新..."],
-                AwardsTitle: "获奖情况",
-                AwardsList: ["国家奖学金，教育部，2022年","重庆市优秀毕业生，市教委，2024年","重庆市优秀毕业设计, 市教委，2024年"],
-                contactTitle: "联系方式",
-                contactContent: "邮箱: hitfsh@outlook.com",
-                footer: "&copy; 2025 Fu, Shihao.       Technical Support by ChatGPT."
+                education: ["<span>2024年－至今:</span> 哈尔滨工业大学市政工程系，博士研究生在读", "<span>2020年－2024年:</span> 重庆大学给排水科学与工程系，获工学学士学位"],
+                publications: ["待更新..."],
+                awards: ["国家奖学金，教育部，2022年", "重庆市优秀毕业生，市教委，2024年", "重庆市优秀毕业设计, 市教委，2024年"],
+                footer: "&copy; 2025 Fu, Shihao. 技术支持由 ChatGPT 提供。"
             }
         };
 
+        let currentLang = 'en';
+
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'zh' : 'en';
-            const langContent = content[currentLang];
+            const lang = content[currentLang];
 
-            document.querySelector('#header-title').textContent = langContent.title;
-            document.querySelector('#header-subtitle').textContent = langContent.subtitle;
-            document.querySelectorAll('nav a').forEach((link, index) => {
-                link.textContent = langContent.nav[index];
-            });
-            document.querySelector('#about-title').textContent = langContent.aboutTitle;
-            document.querySelector('#about-content').textContent = langContent.aboutContent;
-            document.querySelector('#education-title').textContent = langContent.educationTitle;
-            document.querySelector('#education-list').innerHTML = langContent.educationList.map(item => `<li>${item}</li>`).join('');
-            document.querySelector('#Publications-title').textContent = langContent.PublicationsTitle;
-            document.querySelector('#Publications-list').innerHTML = langContent.PublicationsList.map(item => `<li>${item}</li>`).join('');
-            document.querySelector('#Awards-title').textContent = langContent.AwardsTitle;
-            document.querySelector('#Awards-list').innerHTML = langContent.AwardsList.map(item => `<li>${item}</li>`).join('');
-            document.querySelector('#contact-title').textContent = langContent.contactTitle;
-            document.querySelector('#contact-content').textContent = langContent.contactContent;
-            document.querySelector('#footer-content').innerHTML = langContent.footer;
+            document.getElementById('header-title').textContent = lang.title;
+            document.getElementById('header-subtitle').textContent = lang.subtitle;
+            document.querySelectorAll('nav a').forEach((el, i) => el.textContent = lang.nav[i]);
+            document.getElementById('about-content').textContent = lang.aboutContent;
+            document.getElementById('education-list').innerHTML = lang.education.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('Publications-list').innerHTML = lang.publications.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('Awards-list').innerHTML = lang.awards.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('footer-content').innerHTML = lang.footer;
         }
+
+        toggleLanguage(); // Initial content setup
     </script>
 </body>
 </html>
