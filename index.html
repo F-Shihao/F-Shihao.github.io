@@ -10,15 +10,15 @@
             margin: 0; padding: 0;
             background: #f8f9fa; color: #333;
         }
-       header {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        header {
+            background: linear-gradient(135deg, #4a90e2, #9013fe);
             color: white; text-align: center;
             padding: 1.5rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             height: 70px; /* Fixed height */
         }
         footer {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            background: linear-gradient(135deg, #4a90e2, #9013fe);
             color: white; text-align: center;
             padding: 0.1rem 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -42,14 +42,14 @@
         }
         nav a {
             text-decoration: none; 
-            color: #0072ff; 
+            color: #9013fe; 
             font-weight: bold;
             margin: 0 0.5rem; 
             transition: color 0.3s;
             flex-shrink: 0; /* 防止导航链接被压缩 */
         }
         nav a:hover { 
-            color: #0056b3; 
+            color: #4a90e2; 
         }
         #language-button {
             position: absolute; top: 15px; right: 15px;
@@ -62,7 +62,21 @@
             background: white; border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
+        .content-block {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            background: #e6eeff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
         footer { position: fixed; bottom: 0; width: 100%; }
+        .text-block {
+            padding: 1rem;
+            background: #e6eeff;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             header p { font-size: 1rem; }
@@ -85,23 +99,26 @@
     </nav>
     <section id="about">
         <h2 id="about-title">About</h2>
-        <p id="about-content">Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering.</p>
+        <div class="text-block" id="about-content">Welcome! I am a Ph.D. Student specializing in Environmental Science and Engineering.</div>
     </section>
     <section id="education">
         <h2 id="education-title">Education</h2>
-        <ul id="education-list"></ul>
+        <div class="content-block">Doctoral Candidate: Municipal Engineering | Harbin Institute of Technology</div>
+        <div class="content-block">Bachelor: Water Science and Engineering | Chongqing University</div>
     </section>
     <section id="Publications">
         <h2 id="Publications-title">Publications</h2>
-        <ul id="Publications-list"></ul>
+        <div class="content-block">Working...</div>
     </section>
     <section id="Awards">
         <h2 id="Awards-title">Awards</h2>
-        <ul id="Awards-list"></ul>
+        <div class="content-block">National Scholarship, Ministry of Education (China), 2022</div>
+        <div class="content-block">Outstanding Graduate, Chongqing Education Commission, 2024</div>
+        <div class="content-block">Outstanding Design, Chongqing Education Commission, 2024</div>
     </section>
     <section id="contact">
         <h2 id="contact-title">Contact</h2>
-        <p id="contact-content">Email: hitfsh@outlook.com</p>
+        <div class="text-block" id="contact-content">Email: hitfsh@outlook.com</div>
     </section>
     <footer>
         <p id="footer-content">&copy; 2025 Fu, Shihao. Technical Support by ChatGPT.</p>
@@ -119,7 +136,7 @@
                 footer: "&copy; 2025 Fu, Shihao. Technical Support by ChatGPT."
             },
             zh: {
-                title: "个人简历",
+                title: "FU,SHIHAO",
                 subtitle: "博士研究生 | 哈尔滨工业大学",
                 nav: ["基本信息", "教育背景", "论文期刊", "获奖情况", "联系方式"],
                 aboutContent: "欢迎！我是一名专注于市政工程领域的研究生，研究方向包括水处理技术。",
@@ -140,9 +157,9 @@
             document.getElementById('header-subtitle').textContent = lang.subtitle;
             document.querySelectorAll('nav a').forEach((el, i) => el.textContent = lang.nav[i]);
             document.getElementById('about-content').textContent = lang.aboutContent;
-            document.getElementById('education-list').innerHTML = lang.education.map(item => `<li>${item}</li>`).join('');
-            document.getElementById('Publications-list').innerHTML = lang.publications.map(item => `<li>${item}</li>`).join('');
-            document.getElementById('Awards-list').innerHTML = lang.awards.map(item => `<li>${item}</li>`).join('');
+            document.getElementById('education-content').innerHTML = lang.education.map(item => `<div class="content-block">${item}</div>`).join('');
+            document.getElementById('Publications-content').innerHTML = lang.publications.map(item => `<div class="content-block">${item}</div>`).join('');
+            document.getElementById('Awards-content').innerHTML = lang.awards.map(item => `<div class="content-block">${item}</div>`).join('');
             document.getElementById('footer-content').innerHTML = lang.footer;
         }
 
