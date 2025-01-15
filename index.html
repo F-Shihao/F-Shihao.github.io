@@ -37,6 +37,48 @@
         header .nav a:hover {
             color: #1e90ff;
         }
+        header .language-switcher {
+            position: relative;
+            display: inline-block;
+        }
+        header .language-switcher button {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+        header .language-switcher button:hover {
+            background-color: #1e90ff;
+        }
+        header .language-switcher .dropdown {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 100px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            z-index: 1;
+        }
+        header .language-switcher .dropdown button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 10px;
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 14px;
+            border-radius: 0;
+        }
+        header .language-switcher .dropdown button:hover {
+            background-color: #1e90ff;
+        }
+        header .language-switcher:hover .dropdown {
+            display: block;
+        }
         .hero {
             background: linear-gradient(rgba(192,192,192), rgba(105,105,105)), url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
             height: 100vh;
@@ -58,19 +100,12 @@
             padding: 30px 30px;
             text-align: center;
         }
-        .section h2 {          <!-- 小标题和正文的距离-->      margin-top: 20px;
+        .section h2 {
+            margin-top: 20px;
             font-size: 2.5em;
-    
             margin-bottom: 40px;
             color: #121212;
         }
-			/* 小标题和正文的距离 */
-			.section h3 {
-   				font-size: 1.2em;
-   				margin-top: 100px;
-    			color: #121212;
-			}
-
         .section p {
             font-size: 1.2em;
             margin-bottom: 20px;
@@ -83,7 +118,6 @@
             flex-wrap: wrap;
         }
         .card {
-    
             background: #ffffff;
             padding: 25px;
             border-radius: 12px;
@@ -92,23 +126,20 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card img {
-         
             border-radius: 5px;
             margin-bottom: 5px;
-          margin-top: 20px;
+            margin-top: 20px;
         }
         .card iframe {
             width: 265px;
-            height：166px;
+            height: 166px;
             border-radius: 5px;
             margin-bottom: 5px;
-          		margin-top: 20px;
-          
+            margin-top: 20px;
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-          
         }
         .card h3 {
             margin-top: 20px;
@@ -122,124 +153,120 @@
             margin-top: 10px;
         }
     </style>
+    <script>
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-en], [data-cn]').forEach(element => {                
+                element.innerHTML = element.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
 </head>
 <body>
     <header>
         <div class="nav">
-            <div class="logo">Home</div>
+            <div class="logo" data-en="Home" data-cn="主页">Home</div>
             <div class="links">
-                <a href="#about">About</a>
-                <a href="#education">Edu.</a>
-                <a href="#publications">Pub.</a>
-                <a href="#awards">Awards</a>
-                <a href="#more">More</a>
+                <a href="#about" data-en="About" data-cn="关于">About</a>
+                <a href="#education" data-en="Edu." data-cn="教育">Edu.</a>
+                <a href="#publications" data-en="Pub." data-cn="出版物">Pub.</a>
+                <a href="#awards" data-en="Awards" data-cn="奖项">Awards</a>
+                <a href="#more" data-en="More" data-cn="更多">More</a>
+                <div class="language-switcher">
+                    <button>Language</button>
+                    <div class="dropdown">
+                        <button onclick="switchLanguage('cn')">中文</button>
+                        <button onclick="switchLanguage('en')">English</button>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
     <div class="hero">
         <div>
-            <h1>I‘m Fu, Shihao. Welcome!</h1>
-            <p>Exploring Knowledge, Inspiring Innovation</p>
+            <h1 data-en="I'm Fu, Shihao. Welcome!" data-cn="我是傅世豪，欢迎！">I'm Fu, Shihao. Welcome!</h1>
+            <p data-en="Exploring Knowledge, Inspiring Innovation" data-cn="探索知识，启迪创新">Exploring Knowledge, Inspiring Innovation</p>
         </div>
     </div>
 
     <div id="about" class="section">
-        <h2>About Me</h2>
-        <p>Welcome! I'm a doctoral student specializing in municipal engineering, with a focus on water treatment technologies. </p>
-      
+        <h2 data-en="About Me" data-cn="关于我">About Me</h2>
+        <p data-en="Welcome! I'm a doctoral student specializing in municipal engineering, with a focus on water treatment technologies." data-cn="欢迎！我是专注于市政工程的博士生，研究重点是水处理技术。">Welcome! I'm a doctoral student specializing in municipal engineering, with a focus on water treatment technologies.</p>
     </div>
 
-  <div id="education" class="section">
-    <h2>Education</h2>
-    <div class="cards">
-        <div class="card">
-            <img src="https://www.hit.edu.cn/_upload/article/images/d3/ec/8fcaa5d24cb59a8e9660324ef50b/735df70a-538b-4bd6-8e52-3f373085a616.png" alt="Harbin Institute of Technology"    height=180px>
-            <h3>Doctoral Candidate:<br> Municipal Engineering</h3>
-          <p>Harbin Institute of Technology<br><i>Aug. 2024 to present</i></p>
-        </div>
-        <div class="card">
-          
-          
-           <img src="https://th.bing.com/th/id/OIP.ElJiGuv74i_YBiam1MRaVAHaHa?rs=1&pid=ImgDetMain" alt="Chongqing University" height=180px>
-           <h3>Bachelor Degree:<br>Water Science and Engineering</h3>
-          <p>Chongqing University<br><i>Sep. 2020 to Jun. 2024</i></p>
-           
-        </div>
-    </div>
-</div>
-
-
-    <div id="publications" class="section">
-        <h2>Publications</h2>
+    <div id="education" class="section">
+        <h2 data-en="Education" data-cn="教育">Education</h2>
         <div class="cards">
             <div class="card">
-      <!--           <img src="https://th.bing.com/th/id/OIP.daD9BP9bF72MCgzBMy6WAAHaJx?w=190&h=251&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="Read man" width=270px height=350px> -->
-                <h3>Working...</h3>
-                <p>I'm hard hard working now.</p>
+                <img src="https://www.hit.edu.cn/_upload/article/images/d3/ec/8fcaa5d24cb59a8e9660324ef50b/735df70a-538b-4bd6-8e52-3f373085a616.png" alt="Harbin Institute of Technology" height="180px">
+                <h3 data-en="Doctoral Candidate: Municipal Engineering" data-cn="博士候选人：市政工程">Doctoral Candidate: Municipal Engineering</h3>
+                <p data-en="Harbin Institute of Technology, Aug. 2024 to present" data-cn="哈尔滨工业大学，2024年8月至今">Harbin Institute of Technology, Aug. 2024 to present</p>
             </div>
             <div class="card">
-        <!--          <img src="https://th.bing.com/th/id/OIP.Pu3LrPDnH1zY5jdCaryvjQHaJb?w=190&h=242&c=7&r=0&o=5&dpr=1.7&pid=1.7" alt="NG" width=270px height=350px> -->
-                 <h3>Dreaming...</h3>
-                 <p>It's extremely hard.</p>
+                <img src="https://th.bing.com/th/id/OIP.ElJiGuv74i_YBiam1MRaVAHaHa?rs=1&pid=ImgDetMain" alt="Chongqing University" height="180px">
+                <h3 data-en="Bachelor Degree: Water Science and Engineering" data-cn="学士学位：水科学与工程">Bachelor Degree: Water Science and Engineering</h3>
+                <p data-en="Chongqing University, Sep. 2020 to Jun. 2024" data-cn="重庆大学，2020年9月至2024年6月">Chongqing University, Sep. 2020 to Jun. 2024</p>
             </div>
-           
+        </div>
+    </div>
+
+    <div id="publications" class="section">
+        <h2 data-en="Publications" data-cn="出版物">Publications</h2>
+        <div class="cards">
+            <div class="card">
+                <h3 data-en="Working..." data-cn="正在工作...">Working...</h3>
+                <p data-en="I'm hard working now." data-cn="我现在正在努力工作。">I'm hard working now.</p>
+            </div>
+            <div class="card">
+                <h3 data-en="Dreaming..." data-cn="梦想中...">Dreaming...</h3>
+                <p data-en="It's extremely hard." data-cn="这非常困难。">It's extremely hard.</p>
+            </div>
         </div>
     </div>
 
     <div id="awards" class="section">
-        <h2>Awards</h2>
+        <h2 data-en="Awards" data-cn="奖项">Awards</h2>
         <div class="cards">
             <div class="card">
-                <img src="https://www.sbr-info.com/lstp/210824/1-210R415525H57.png" alt="Ministry of Education (China)" height=200px>
-                <h3>National Scholarship</h3>
-                <p>Ministry of Education (China), 2022</p>
+                <img src="https://www.sbr-info.com/lstp/210824/1-210R415525H57.png" alt="Ministry of Education (China)" height="200px">
+                <h3 data-en="National Scholarship" data-cn="国家奖学金">National Scholarship</h3>
+                <p data-en="Ministry of Education (China), 2022" data-cn="中国教育部，2022年">Ministry of Education (China), 2022</p>
             </div>
             <div class="card">
-              <img src="https://th.bing.com/th/id/OIP.FV1ue822daiE62R2ogBswgAAAA?rs=1&pid=ImgDetMain" alt="Chongqing Education Commission"  height=170px>
-                <h3>Outstanding Graduate</h3>
-                <p>Chongqing Education Commission, 2024</p>
+                <img src="https://th.bing.com/th/id/OIP.FV1ue822daiE62R2ogBswgAAAA?rs=1&pid=ImgDetMain" alt="Chongqing Education Commission" height="170px">
+                <h3 data-en="Outstanding Graduate" data-cn="优秀毕业生">Outstanding Graduate</h3>
+                <p data-en="Chongqing Education Commission, 2024" data-cn="重庆市教育委员会，2024年">Chongqing Education Commission, 2024</p>
             </div>
             <div class="card">
-                <img src="https://th.bing.com/th/id/OIP.FV1ue822daiE62R2ogBswgAAAA?rs=1&pid=ImgDetMain" alt="Chongqing Education Commission"  height=170px>
-                <h3>Outstanding Graduation Design </h3>
-                <p>Chongqing Education Commission, 2024</p>
-            </div>         
+                <img src="https://th.bing.com/th/id/OIP.FV1ue822daiE62R2ogBswgAAAA?rs=1&pid=ImgDetMain" alt="Chongqing Education Commission" height="170px">
+                <h3 data-en="Outstanding Graduation Design" data-cn="优秀毕业设计">Outstanding Graduation Design</h3>
+                <p data-en="Chongqing Education Commission, 2024" data-cn="重庆市教育委员会，2024年">Chongqing Education Commission, 2024</p>
+            </div>
         </div>
     </div>
 
     <div id="more" class="section">
-        <h2>More</h2>
-      <div class="cards">
+        <h2 data-en="More" data-cn="更多">More</h2>
+        <div class="cards">
             <div class="card">
-              
-              <iframe  src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/41/59/27073645941/27073645941-1-192.mp4?e=ig8euxZM2rNcNbNMhzdVhwdlhbKzhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1736609903&gen=playurlv2&os=08cbv&oi=1696788563&trid=f88fe58c68194e0688c8e930f49ddbaeT&mid=8322307&platform=html5&og=hw&upsig=b317d355bbc95ec56de486035357e638&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&bw=246559&orderid=0,1&buvid=&build=0&mobi_app=&f=T_0_0&logo=80000000" allowfullscreen></iframe>
-
-                <h3>Snow in HIT</h3>
-                <p>After the snow cleared, the snowy scenery of HIT is as beautiful as a picture scroll!</p>
+                <iframe src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/41/59/27073645941/27073645941-1-192.mp4?e=ig8euxZM2rNcNbNMhzdVhwdlhbKzhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1736609903&gen=playurlv2&os=08cbv&oi=1696788563&trid=f88fe58c68194e0688c8e930f49ddbaeT&mid=8322307&platform=html5&og=hw&upsig=b317d355bbc95ec56de486035357e638&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&bw=246559&orderid=0,1&buvid=&build=0&mobi_app=&f=T_0_0&logo=80000000" allowfullscreen></iframe>
+                <h3 data-en="Snow in HIT" data-cn="哈工大的雪">Snow in HIT</h3>
+                <p data-en="After the snow cleared, the snowy scenery of HIT is as beautiful as a picture scroll!" data-cn="雪后初晴，哈工大的雪景如画卷般美丽！">After the snow cleared, the snowy scenery of HIT is as beautiful as a picture scroll!</p>
             </div>
             <div class="card">
-              <img src="https://news.cqu.edu.cn/uploadfile/2023/1207/1701942151720127.jpg" alt="Chongqing Education Commission" height=150px>
-                <h3>Striving for Excellence</h3>
-                <p>Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year</p>
+                <img src="https://news.cqu.edu.cn/uploadfile/2023/1207/1701942151720127.jpg" alt="Chongqing Education Commission" height="150px">
+                <h3 data-en="Striving for Excellence" data-cn="追求卓越">Striving for Excellence</h3>
+                <p data-en="Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year" data-cn="重庆大学举办2022-2023学年追求卓越学生表彰大会">Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year</p>
             </div>
-         
         </div>
-
-        <!-- <p>LinkedIn: <a href="https://linkedin.com" target="_blank">My Profile</a></p>-->
     </div>
 
-  
-   <div class="section">
-        
-     <p>Email: hitfsh@outlook.com<br> <b>Harbin, Heilongjiang Province, China</b></p>
-      
-        <!-- <p>LinkedIn: <a href="https://linkedin.com" target="_blank">My Profile</a></p>-->
+    <div class="section">
+        <p data-en="Email: hitfsh@outlook.com<br>Harbin, Heilongjiang Province, China" data-cn="邮箱：hitfsh@outlook.com<br>中国黑龙江省哈尔滨市">Email: hitfsh@outlook.com<br>Harbin, Heilongjiang Province, China</p>
     </div>
-    
-  
+
     <footer>
-        <p>&copy; 2025 Fu,Shihao. All Rights Reserved.</p>
+        <p data-en="&copy; 2025 Fu, Shihao. All Rights Reserved." data-cn="&copy; 2025 傅世豪。保留所有权利。">&copy; 2025 Fu, Shihao. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
