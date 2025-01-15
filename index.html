@@ -37,47 +37,19 @@
         header .nav a:hover {
             color: #1e90ff;
         }
+        header .links {
+            display: flex;
+            align-items: center;
+        }
         header .language-switcher {
-            position: relative;
-            display: inline-block;
-        }
-        header .language-switcher button {
             cursor: pointer;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
+            font-size: 20px;
+            margin-left: 10px;
             color: #fff;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
+            transition: color 0.3s ease;
         }
-        header .language-switcher button:hover {
-            background-color: #1e90ff;
-        }
-        header .language-switcher .dropdown {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 100px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-            z-index: 1;
-        }
-        header .language-switcher .dropdown button {
-            background-color: #333;
-            color: #fff;
-            padding: 8px 10px;
-            border: none;
-            width: 100%;
-            text-align: left;
-            font-size: 14px;
-            border-radius: 0;
-        }
-        header .language-switcher .dropdown button:hover {
-            background-color: #1e90ff;
-        }
-        header .language-switcher:hover .dropdown {
-            display: block;
+        header .language-switcher:hover {
+            color: #1e90ff;
         }
         .hero {
             background: linear-gradient(rgba(192,192,192), rgba(105,105,105)), url('https://via.placeholder.com/1920x800') no-repeat center center/cover;
@@ -154,9 +126,12 @@
         }
     </style>
     <script>
-        function switchLanguage(lang) {
-            document.querySelectorAll('[data-en], [data-cn]').forEach(element => {                
-                element.innerHTML = element.getAttribute(`data-${lang}`);
+        let currentLanguage = 'en';
+
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'cn' : 'en';
+            document.querySelectorAll('[data-en], [data-cn]').forEach(element => {
+                element.innerHTML = element.getAttribute(`data-${currentLanguage}`);
             });
         }
     </script>
@@ -164,27 +139,21 @@
 <body>
     <header>
         <div class="nav">
-            <div class="logo" data-en="Home" data-cn="主页">Home</div>
+            <div class="logo" data-en="&#127795" data-cn="&#127795">&#127780;</div>
             <div class="links">
                 <a href="#about" data-en="About" data-cn="关于">About</a>
                 <a href="#education" data-en="Edu." data-cn="教育">Edu.</a>
                 <a href="#publications" data-en="Pub." data-cn="出版物">Pub.</a>
                 <a href="#awards" data-en="Awards" data-cn="奖项">Awards</a>
                 <a href="#more" data-en="More" data-cn="更多">More</a>
-                <div class="language-switcher">
-                    <button>Language</button>
-                    <div class="dropdown">
-                        <button onclick="switchLanguage('cn')">中文</button>
-                        <button onclick="switchLanguage('en')">English</button>
-                    </div>
-                </div>
+                <div class="language-switcher" onclick="toggleLanguage()">🌐</div>
             </div>
         </div>
     </header>
 
     <div class="hero">
         <div>
-            <h1 data-en="I'm Fu, Shihao. Welcome!" data-cn="我是傅世豪，欢迎！">I'm Fu, Shihao. Welcome!</h1>
+            <h1 data-en="I'm Fu, Shihao. Welcome!" data-cn="您好，欢迎浏览本网站!">I'm Fu, Shihao. Welcome!</h1>
             <p data-en="Exploring Knowledge, Inspiring Innovation" data-cn="探索知识，启迪创新">Exploring Knowledge, Inspiring Innovation</p>
         </div>
     </div>
@@ -230,7 +199,7 @@
             <div class="card">
                 <img src="https://www.sbr-info.com/lstp/210824/1-210R415525H57.png" alt="Ministry of Education (China)" height="200px">
                 <h3 data-en="National Scholarship" data-cn="国家奖学金">National Scholarship</h3>
-                <p data-en="Ministry of Education (China), 2022" data-cn="中国教育部，2022年">Ministry of Education (China), 2022</p>
+                <p data-en="Ministry of Education (China), 2022" data-cn="教育部，2022年">Ministry of Education (China), 2022</p>
             </div>
             <div class="card">
                 <img src="https://th.bing.com/th/id/OIP.FV1ue822daiE62R2ogBswgAAAA?rs=1&pid=ImgDetMain" alt="Chongqing Education Commission" height="170px">
@@ -249,24 +218,24 @@
         <h2 data-en="More" data-cn="更多">More</h2>
         <div class="cards">
             <div class="card">
-                <iframe src="https://upos-sz-mirror08c.bilivideo.com/upgcxcode/41/59/27073645941/27073645941-1-192.mp4?e=ig8euxZM2rNcNbNMhzdVhwdlhbKzhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&nbs=1&deadline=1736609903&gen=playurlv2&os=08cbv&oi=1696788563&trid=f88fe58c68194e0688c8e930f49ddbaeT&mid=8322307&platform=html5&og=hw&upsig=b317d355bbc95ec56de486035357e638&uparams=e,uipk,nbs,deadline,gen,os,oi,trid,mid,platform,og&bvc=vod&nettype=0&bw=246559&orderid=0,1&buvid=&build=0&mobi_app=&f=T_0_0&logo=80000000" allowfullscreen></iframe>
+                <img src="https://th.bing.com/th/id/OIP.rXk82z4Za2i4AmL6iEf2bAHaFj?rs=1&pid=ImgDetMain" height="200px">
                 <h3 data-en="Snow in HIT" data-cn="哈工大的雪">Snow in HIT</h3>
                 <p data-en="After the snow cleared, the snowy scenery of HIT is as beautiful as a picture scroll!" data-cn="雪后初晴，哈工大的雪景如画卷般美丽！">After the snow cleared, the snowy scenery of HIT is as beautiful as a picture scroll!</p>
             </div>
             <div class="card">
                 <img src="https://news.cqu.edu.cn/uploadfile/2023/1207/1701942151720127.jpg" alt="Chongqing Education Commission" height="150px">
                 <h3 data-en="Striving for Excellence" data-cn="追求卓越">Striving for Excellence</h3>
-                <p data-en="Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year" data-cn="重庆大学举办2022-2023学年追求卓越学生表彰大会">Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year</p>
+                <p data-en="Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year" data-cn="重庆大学举办2022-2023学年学生争优创先表彰大会">Chongqing University Holds Recognition Ceremony for Students Striving for Excellence in the 2022-2023 Academic Year</p>
             </div>
         </div>
     </div>
 
     <div class="section">
-        <p data-en="Email: hitfsh@outlook.com<br>Harbin, Heilongjiang Province, China" data-cn="邮箱：hitfsh@outlook.com<br>中国黑龙江省哈尔滨市">Email: hitfsh@outlook.com<br>Harbin, Heilongjiang Province, China</p>
+        <p data-en="Email: hitfsh@outlook.com<br>Harbin, Heilongjiang Province, China" data-cn="邮箱：hitfsh@outlook.com<br>黑龙江省哈尔滨市南岗区黄河路73号">Email: hitfsh@outlook.com<br>Harbin, Heilongjiang Province, China</p>
     </div>
 
-    <footer>
-        <p data-en="&copy; 2025 Fu, Shihao. All Rights Reserved." data-cn="&copy; 2025 傅世豪。保留所有权利。">&copy; 2025 Fu, Shihao. All Rights Reserved.</p>
+    <footer>                                                                                 
+        <p data-en="&copy; 2025 Fu, Shihao. All Rights Reserved." data-cn="&copy; 2025 Fu, Shihao.  All Rights Reserved.">&copy; 2025 Fu, Shihao. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
